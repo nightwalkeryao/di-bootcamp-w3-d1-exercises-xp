@@ -16,18 +16,23 @@ let allBooks = [
 // 4. Requirements : All the instructions below need to be coded in the js file
 // 4.1 Using the DOM, render the books inside an HTML table (the HTML table must be added to the <div> created in part 1).
 let table = document.createElement('table')
+table.classList.add('table')
+// Create a heading row for the table
 let tr = document.createElement('tr')
 let ths = ['Title', 'Author', 'Image', 'Alread read']
 ths.forEach(a => {
     let th = document.createElement('th')
+    th.className = 'th'
     th.textContent = a
     tr.appendChild(th)
 })
 table.appendChild(tr)
+// Add books as rows to the table
 allBooks.forEach(book => {
     let tr = document.createElement('tr')
     for(a in book) {
         let td = document.createElement('td')
+        td.className = 'td'
         if(a == 'image') {
             let img = document.createElement('img')
             img.src = book[a]
@@ -38,8 +43,9 @@ allBooks.forEach(book => {
         }
         tr.appendChild(td)
     }
+    // Set text color red for already read books
     if(book.alreadyRead)
-        tr.style.color = 'red'
+        tr.classList.add('is-read')
     table.appendChild(tr)
 })
 
