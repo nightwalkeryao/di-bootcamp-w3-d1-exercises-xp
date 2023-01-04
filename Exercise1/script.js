@@ -5,7 +5,7 @@ console.log(`div: ${div}`)
 // 2.2 Change the name “Pete” to “Richard”
 document.querySelector('.list').children[1].textContent = "Richard"
 // 2.3 Change each first name of the two <ul>'s to your name.
-for (const li of document.querySelectorAll('li')) {
+for (const li of document.querySelectorAll('li:first-child')) {
     li.textContent = "Yao"
 }
 // 2.4 Delete the <li> that contains the text node “Sarah”.
